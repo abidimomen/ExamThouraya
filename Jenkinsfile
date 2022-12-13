@@ -53,12 +53,12 @@ pipeline {
                 sh 'mvn deploy -Dmaven.test.skip=true '
             }
         }
-        stage('Deploy Image to DockerHub') {
-            steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin';
-                sh 'sudo docker push momenabidi/tp';
-            }
-        }
+        // stage('Deploy Image to DockerHub') {
+        //     steps {
+        //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin';
+        //         sh 'sudo docker push momenabidi/tp';
+        //     }
+        // }
 
 
         stage("docker compose") {
